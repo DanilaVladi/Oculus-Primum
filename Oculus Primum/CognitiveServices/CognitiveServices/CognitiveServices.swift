@@ -25,7 +25,7 @@ import UIKit
 enum CognitiveServicesApiKeys: String {
     
     // Vision
-    case ComputerVision = "54860762164e4fa2a04a338afba1429e"
+    case ComputerVision = "029cc539dba248d88b09e3200b0176b8"
     case Emotion = "Emotion Key"
     case Face = "Face Key"
     case Video = "Video Key"
@@ -67,6 +67,6 @@ enum CognitiveServicesApiKeys: String {
 class CognitiveServices: NSObject {
     static let sharedInstance = CognitiveServices()
     
-    let ocr = OcrComputerVision()
+    let ocr = OCR()
     let analyzeImage = AnalyzeImage()
 }

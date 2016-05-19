@@ -18,6 +18,14 @@
 import UIKit
 
 /**
+ RequestObject is the required parameter for the AnalyzeImage API containing all required information to perform a request
+ - parameter resource: The path or data of the image or
+ - parameter visualFeatures, details: Read more about those [here](https://dev.projectoxford.ai/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)
+*/
+typealias AnalyzeImageRequestObject = (resource: AnyObject, visualFeatures: AnalyzeImage.AnalyzeImageVisualFeatures)
+
+
+/**
  Analyze Image
  
 This operation extracts a rich set of visual features based on the image content. 
@@ -26,6 +34,7 @@ This operation extracts a rich set of visual features based on the image content
  
  */
 class AnalyzeImage: NSObject {
+    
 
     /// The url to perform the requests on
     let url = "https://api.projectoxford.ai/vision/v1.0/analyze"
@@ -85,72 +94,34 @@ class AnalyzeImage: NSObject {
     }
  
     
+    
     /**
      This operation extracts a rich set of visual features based on the image content.
-     
-     - parameter imageUrl: The Url path of the image
-     - parameter visualFeatures, details: Read more about those [here](https://dev.projectoxford.ai/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)
-     - parameter completion: Once the request has been performed the response is returend as a JSON Object in the completion block.
+     - parameter requestObject: The required information required to perform a request
+     - parameter completion: Once the request has been performed the response is returend as a Dictionary in the completion block.
      */
-    func analyzeImageOnURL(imageURL: String, visualFeatures: AnalyzeImageVisualFeatures = .Categories, completion: (response: [String : AnyObject]?) -> Void) throws {
-
+    func analyzeImageWithRequestObject(requestObject: AnalyzeImageRequestObject, completion: (response: [String : AnyObject]?) -> Void) throws {
+        
         //Query parameters
-        let parameters = ["entities=true", "visualFeatures=\(visualFeatures.rawValue)"].joinWithSeparator("&")
+        let parameters = ["entities=true", "visualFeatures=\(requestObject.visualFeatures.rawValue)"].joinWithSeparator("&")
         let requestURL = NSURL(string: url + "?" + parameters)!
         
         let request = NSMutableURLRequest(URL: requestURL)
         request.HTTPMethod = "POST"
-
-        // Request headers
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(key, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
         
-        // Request body
-        request.HTTPBody = "{\"url\":\"\(imageURL)\"}".dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
-            if error != nil{
-                print("Error -> \(error)")
-                completion(response: nil)
-                return
-            }else{
-                let results = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
-                
-                // Hand dict over
-                dispatch_async(dispatch_get_main_queue()) {
-                    completion(response: results)
-                }
-            }
-            
+        // Request Parameter
+        if let path = requestObject.resource as? String {
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.HTTPBody = "{\"url\":\"\(path)\"}".dataUsingEncoding(NSUTF8StringEncoding)
         }
-        task.resume()
-    
-    }
-  
-    
-    
-    /**
-     This operation extracts a rich set of visual features based on the image content.
-     
-     - parameter imageUrl: The Url path of the image
-     - parameter visualFeatures, details: Read more about those [here](https://dev.projectoxford.ai/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)
-     - parameter completion: Once the request has been performed the response is returend as a JSON Object in the completion block.
-     */
-    func analyzeImage(imageData: NSData, visualFeatures: AnalyzeImageVisualFeatures = .Categories, completion: (response: [String : AnyObject]?) -> Void) throws {
+        else if let imageData = requestObject.resource as? NSData {
+            request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+            request.HTTPBody = imageData
+        }
         
-        //Query parameters
-        let parameters = ["entities=true", "visualFeatures=\(visualFeatures.rawValue)"].joinWithSeparator("&")
-        let requestURL = NSURL(string: url + "?" + parameters)!
-        
-        let request = NSMutableURLRequest(URL: requestURL)
-        request.HTTPMethod = "POST"
-        
-        // Request headers
-        request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
         request.setValue(key, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+
         
-        // Request body
-        request.HTTPBody = imageData
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
             if error != nil{
@@ -170,7 +141,7 @@ class AnalyzeImage: NSObject {
         task.resume()
         
     }
-
+    
     
     
     func extractDescriptionFromDictionary(dictionary: [String : AnyObject]) -> (text: String, confidence: Float) {

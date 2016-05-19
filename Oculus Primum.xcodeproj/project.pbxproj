@@ -174,6 +174,7 @@
 		6463E4401CEB92A9000A2695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TGPhotoViewController.xib; sourceTree = "<group>"; };
 		6463E4421CEB92A9000A2695 /* TGCameraViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TGCameraViewController.bundle; sourceTree = "<group>"; };
 		6463E4431CEB92A9000A2695 /* TGCameraViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TGCameraViewController.xcassets; sourceTree = "<group>"; };
+		6474C4701CEE7983007DBCBD /* Oculus Primum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Oculus Primum.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +216,7 @@
 		641912011CEB6E2D00FA5319 /* Oculus Primum */ = {
 			isa = PBXGroup;
 			children = (
+				6474C4701CEE7983007DBCBD /* Oculus Primum.entitlements */,
 				6463E4041CEB92A9000A2695 /* TGCameraViewController */,
 				641912901CEB8EEF00FA5319 /* CognitiveServices */,
 				641912021CEB6E2D00FA5319 /* AppDelegate.swift */,
@@ -486,6 +488,15 @@
 				TargetAttributes = {
 					641911FE1CEB6E2D00FA5319 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = L6QAR75AH5;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					641912121CEB6E2D00FA5319 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -749,6 +760,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Oculus Primum/Oculus Primum.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Oculus Primum/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -763,6 +776,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Oculus Primum/Oculus Primum.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Oculus Primum/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

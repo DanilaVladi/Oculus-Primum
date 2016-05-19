@@ -18,10 +18,6 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     var selectedItem: SelectedItem = .See
     
-    @IBOutlet var tapBar: UITabBar!
-    @IBOutlet var seeBarItem: UITabBarItem!
-    @IBOutlet var readBarItem: UITabBarItem!
-    
     @IBOutlet var pictureButton: UIButton!
     @IBOutlet var captureView: UIView!
     
@@ -38,9 +34,6 @@ class ViewController: UIViewController, UITabBarDelegate {
         camera.startRunning()
         camera.insertSublayerWithCaptureView(captureView, atRootView: self.view)
         
-        
-        self.tapBar.selectedItem = seeBarItem
-        self.tapBar.delegate = self
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -74,38 +67,50 @@ class ViewController: UIViewController, UITabBarDelegate {
                     
                 case .See:
                     let analyzeImage = cognitiveServices.analyzeImage
-                        try analyzeImage.analyzeImage(imageData!, visualFeatures: .Description) { response in
-                            let description = analyzeImage.extractDescriptionFromDictionary(response!)
-                            
-                            
-                            var prefix: String {
-                                if description.confidence > 0.8 {
-                                    return ""
-                                }
-                                else if description.confidence > 0.5 {
-                                    return "I think it's "
-                                }
-                                else {
-                                    return "This might be "
-                                }
+                    let requestObject: AnalyzeImageRequestObject = (imageData!, .Description)
+                    
+                    
+                    try analyzeImage.analyzeImageWithRequestObject(requestObject, completion: { (response) in
+                        let description = analyzeImage.extractDescriptionFromDictionary(response!)
+                        
+                        
+                        
+                        var prefix: String {
+                            if description.confidence > 0.8 {
+                                return ""
                             }
-                            
-                            waiteAnnouncement.stopSpeakingAtBoundary(.Immediate)
-                            
-                            (prefix + description.text).speak()
-                            self.pictureButton.enabled = true
-                    }
-
+                            else if description.confidence > 0.5 {
+                                return "I think it's "
+                            }
+                            else {
+                                return "This might be "
+                            }
+                        }
+                        
+                        waiteAnnouncement.stopSpeakingAtBoundary(.Immediate)
+                        
+                        (prefix + description.text).speak()
+                        print(prefix + description.text)
+                        self.pictureButton.enabled = true
+                    })
+                    
+                    
                 case .Read:
                     let ocr = cognitiveServices.ocr
-                    try ocr.recognizeCharactersOnImageData(imageData!, language: .Automatic, completion: { (response) in
+                    let requestObject: OCRRequestObject = (resource: imageData!, language: .Automatic, detectOrientation: true)
+                    try ocr.recognizeCharactersWithRequestObject(requestObject, completion: { (response) in
+                        
                         let text = ocr.extractStringFromDictionary(response!)
+
                         
                         waiteAnnouncement.stopSpeakingAtBoundary(.Immediate)
                         
                         text.speak()
+                        print(text)
                         self.pictureButton.enabled = true
+
                     })
+
                     
                 }
                     
@@ -123,21 +128,21 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     
 
-    // MARK: - Tab Bar controller
-    
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        if item == seeBarItem {
-            pictureButton.setTitle("Describe", forState: .Normal)
-            pictureButton.setTitle("Describe", forState: .Selected)
-            selectedItem = .See
-        }
-        else if item == readBarItem {
-            pictureButton.setTitle("  Read  ", forState: .Normal)
-            pictureButton.setTitle("  Read  ", forState: .Selected)
-            pictureButton.titleLabel?.text = "  Read  "
-            selectedItem = .Read
-        }
-    }
+//    // MARK: - Tab Bar controller
+//    
+//    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+//        if item == seeBarItem {
+//            pictureButton.setTitle("Describe", forState: .Normal)
+//            pictureButton.setTitle("Describe", forState: .Selected)
+//            selectedItem = .See
+//        }
+//        else if item == readBarItem {
+//            pictureButton.setTitle("  Read  ", forState: .Normal)
+//            pictureButton.setTitle("  Read  ", forState: .Selected)
+//            pictureButton.titleLabel?.text = "  Read  "
+//            selectedItem = .Read
+//        }
+//    }
  
     
     // MARK: - Trait Collection

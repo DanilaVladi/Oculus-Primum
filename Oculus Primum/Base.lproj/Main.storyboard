@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y60-CC-oFM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y60-CC-oFM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -31,24 +31,13 @@
                                     <action selector="readDidPush" destination="BYZ-38-t0r" eventType="touchUpInside" id="GeG-Yf-Djq"/>
                                 </connections>
                             </button>
-                            <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xh0-Rc-aco">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="See" image="eye" id="xhI-DP-vYn"/>
-                                    <tabBarItem title="Read" image="book" id="y8I-1p-nf1"/>
-                                </items>
-                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uUc-GQ-EWj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Ew-um-uu6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xh0-Rc-aco" secondAttribute="bottom" id="2xk-9W-eej"/>
-                            <constraint firstItem="xh0-Rc-aco" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IMT-Mn-JiL"/>
                             <constraint firstItem="kMw-Yh-k3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KJy-6s-0MA"/>
                             <constraint firstItem="uUc-GQ-EWj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Nwu-Fu-8Lt"/>
                             <constraint firstItem="kMw-Yh-k3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OK7-7Y-iMU"/>
-                            <constraint firstAttribute="trailing" secondItem="xh0-Rc-aco" secondAttribute="trailing" id="VU3-CJ-vVI"/>
                             <constraint firstAttribute="trailing" secondItem="kMw-Yh-k3J" secondAttribute="trailing" id="WFd-o4-ZR8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uUc-GQ-EWj" secondAttribute="bottom" id="fkQ-h3-AeM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kMw-Yh-k3J" secondAttribute="bottom" id="i8w-jz-gKR"/>
@@ -59,9 +48,6 @@
                     <connections>
                         <outlet property="captureView" destination="uUc-GQ-EWj" id="bqj-h6-52E"/>
                         <outlet property="pictureButton" destination="kMw-Yh-k3J" id="RME-pg-f4J"/>
-                        <outlet property="readBarItem" destination="y8I-1p-nf1" id="AuS-kA-65C"/>
-                        <outlet property="seeBarItem" destination="xhI-DP-vYn" id="arz-oa-cLb"/>
-                        <outlet property="tapBar" destination="xh0-Rc-aco" id="SIG-yg-9KP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -87,9 +73,5 @@
             <point key="canvasLocation" x="634" y="-202"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="book" width="21" height="21"/>
-        <image name="eye" width="42" height="42"/>
-    </resources>
     <color key="tintColor" red="0.59999999999999998" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

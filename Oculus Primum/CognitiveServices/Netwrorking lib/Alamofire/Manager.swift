@@ -363,9 +363,9 @@ public class Manager {
         }
 
         /**
-            Requests credentials from the delegate in response to an authentication request from the remote server.
+            Requests cre tdentials from the delegate in response to an authentication request from the remote server.
 
-            - parameter session:           The session containing the task whose request requires authentication.
+            - parameter s<ession:           The session containing the task whose request requires authentication.
             - parameter task:              The task whose request requires authentication.
             - parameter challenge:         An object that contains the request for authentication.
             - parameter completionHandler: A handler that your delegate method must call providing the disposition and credential.
