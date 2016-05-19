@@ -35,6 +35,26 @@ This operation extracts a rich set of visual features based on the image content
  */
 class AnalyzeImage: NSObject {
     
+    
+    class AnalyzeImageObject {
+        var description: String?
+        var tags: [String]?
+        var imageFormat: String?
+        var imageDimension: String?
+        var clipArtType: String?
+        var blackAndWhite: String?
+        var isAdultContent: Bool?
+        var adultScore: Float?
+        var isRacyContent: Bool?
+        var racyContentScore: Float?
+        var categories: [[String : AnyObject]]?
+        var faces: [[String : AnyObject]]?
+        var dominantForegroundColor: UIColor?
+        var dominantBackgroundColor: UIColor?
+        var dominantColors: [UIColor]?
+        var accentColor: UIColor?
+    }
+    
 
     /// The url to perform the requests on
     let url = "https://api.projectoxford.ai/vision/v1.0/analyze"

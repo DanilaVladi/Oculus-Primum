@@ -21,25 +21,6 @@
 		641912B81CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912981CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift */; };
 		641912B91CEB8F0B00FA5319 /* TagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912991CEB8F0B00FA5319 /* TagImage.swift */; };
 		641912BA1CEB8F0B00FA5319 /* JSONNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419129A1CEB8F0B00FA5319 /* JSONNSDataExtension.swift */; };
-		641912BB1CEB8F0B00FA5319 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419129E1CEB8F0B00FA5319 /* Alamofire.swift */; };
-		641912BC1CEB8F0B00FA5319 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419129F1CEB8F0B00FA5319 /* Download.swift */; };
-		641912BD1CEB8F0B00FA5319 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A01CEB8F0B00FA5319 /* Error.swift */; };
-		641912BE1CEB8F0B00FA5319 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 641912A11CEB8F0B00FA5319 /* Info-tvOS.plist */; };
-		641912BF1CEB8F0B00FA5319 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 641912A21CEB8F0B00FA5319 /* Info.plist */; };
-		641912C01CEB8F0B00FA5319 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A31CEB8F0B00FA5319 /* Manager.swift */; };
-		641912C11CEB8F0B00FA5319 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A41CEB8F0B00FA5319 /* MultipartFormData.swift */; };
-		641912C21CEB8F0B00FA5319 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A51CEB8F0B00FA5319 /* NetworkReachabilityManager.swift */; };
-		641912C31CEB8F0B00FA5319 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A61CEB8F0B00FA5319 /* Notifications.swift */; };
-		641912C41CEB8F0B00FA5319 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A71CEB8F0B00FA5319 /* ParameterEncoding.swift */; };
-		641912C51CEB8F0B00FA5319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A81CEB8F0B00FA5319 /* Request.swift */; };
-		641912C61CEB8F0B00FA5319 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912A91CEB8F0B00FA5319 /* Response.swift */; };
-		641912C71CEB8F0B00FA5319 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912AA1CEB8F0B00FA5319 /* ResponseSerialization.swift */; };
-		641912C81CEB8F0B00FA5319 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912AB1CEB8F0B00FA5319 /* Result.swift */; };
-		641912C91CEB8F0B00FA5319 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912AC1CEB8F0B00FA5319 /* ServerTrustPolicy.swift */; };
-		641912CA1CEB8F0B00FA5319 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912AD1CEB8F0B00FA5319 /* Stream.swift */; };
-		641912CB1CEB8F0B00FA5319 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912AE1CEB8F0B00FA5319 /* Timeline.swift */; };
-		641912CC1CEB8F0B00FA5319 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912AF1CEB8F0B00FA5319 /* Upload.swift */; };
-		641912CD1CEB8F0B00FA5319 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912B01CEB8F0B00FA5319 /* Validation.swift */; };
 		641912CE1CEB8F0B00FA5319 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912B21CEB8F0B00FA5319 /* StringExtension.swift */; };
 		6463E4441CEB92A9000A2695 /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463E4081CEB92A9000A2695 /* UIImage+CameraFilters.m */; };
 		6463E4451CEB92A9000A2695 /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463E40B1CEB92A9000A2695 /* TGCameraAuthorizationViewController.m */; };
@@ -101,26 +82,6 @@
 		641912981CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeDomainSpecificContent.swift; sourceTree = "<group>"; };
 		641912991CEB8F0B00FA5319 /* TagImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagImage.swift; sourceTree = "<group>"; };
 		6419129A1CEB8F0B00FA5319 /* JSONNSDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONNSDataExtension.swift; sourceTree = "<group>"; };
-		6419129D1CEB8F0B00FA5319 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
-		6419129E1CEB8F0B00FA5319 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		6419129F1CEB8F0B00FA5319 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
-		641912A01CEB8F0B00FA5319 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		641912A11CEB8F0B00FA5319 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
-		641912A21CEB8F0B00FA5319 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		641912A31CEB8F0B00FA5319 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		641912A41CEB8F0B00FA5319 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		641912A51CEB8F0B00FA5319 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		641912A61CEB8F0B00FA5319 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		641912A71CEB8F0B00FA5319 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		641912A81CEB8F0B00FA5319 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		641912A91CEB8F0B00FA5319 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		641912AA1CEB8F0B00FA5319 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
-		641912AB1CEB8F0B00FA5319 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		641912AC1CEB8F0B00FA5319 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		641912AD1CEB8F0B00FA5319 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
-		641912AE1CEB8F0B00FA5319 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
-		641912AF1CEB8F0B00FA5319 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		641912B01CEB8F0B00FA5319 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		641912B21CEB8F0B00FA5319 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6463E4071CEB92A9000A2695 /* UIImage+CameraFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CameraFilters.h"; sourceTree = "<group>"; };
 		6463E4081CEB92A9000A2695 /* UIImage+CameraFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CameraFilters.m"; sourceTree = "<group>"; };
@@ -243,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				641912911CEB8F0B00FA5319 /* CognitiveServices */,
-				6419129B1CEB8F0B00FA5319 /* Netwrorking lib */,
 				641912B11CEB8F0B00FA5319 /* Swift Extensions */,
 			);
 			path = CognitiveServices;
@@ -270,41 +230,6 @@
 				641912991CEB8F0B00FA5319 /* TagImage.swift */,
 			);
 			path = ComputerVision;
-			sourceTree = "<group>";
-		};
-		6419129B1CEB8F0B00FA5319 /* Netwrorking lib */ = {
-			isa = PBXGroup;
-			children = (
-				6419129C1CEB8F0B00FA5319 /* Alamofire */,
-			);
-			path = "Netwrorking lib";
-			sourceTree = "<group>";
-		};
-		6419129C1CEB8F0B00FA5319 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				6419129D1CEB8F0B00FA5319 /* Alamofire.h */,
-				6419129E1CEB8F0B00FA5319 /* Alamofire.swift */,
-				6419129F1CEB8F0B00FA5319 /* Download.swift */,
-				641912A01CEB8F0B00FA5319 /* Error.swift */,
-				641912A11CEB8F0B00FA5319 /* Info-tvOS.plist */,
-				641912A21CEB8F0B00FA5319 /* Info.plist */,
-				641912A31CEB8F0B00FA5319 /* Manager.swift */,
-				641912A41CEB8F0B00FA5319 /* MultipartFormData.swift */,
-				641912A51CEB8F0B00FA5319 /* NetworkReachabilityManager.swift */,
-				641912A61CEB8F0B00FA5319 /* Notifications.swift */,
-				641912A71CEB8F0B00FA5319 /* ParameterEncoding.swift */,
-				641912A81CEB8F0B00FA5319 /* Request.swift */,
-				641912A91CEB8F0B00FA5319 /* Response.swift */,
-				641912AA1CEB8F0B00FA5319 /* ResponseSerialization.swift */,
-				641912AB1CEB8F0B00FA5319 /* Result.swift */,
-				641912AC1CEB8F0B00FA5319 /* ServerTrustPolicy.swift */,
-				641912AD1CEB8F0B00FA5319 /* Stream.swift */,
-				641912AE1CEB8F0B00FA5319 /* Timeline.swift */,
-				641912AF1CEB8F0B00FA5319 /* Upload.swift */,
-				641912B01CEB8F0B00FA5319 /* Validation.swift */,
-			);
-			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		641912B11CEB8F0B00FA5319 /* Swift Extensions */ = {
@@ -533,9 +458,7 @@
 				6419120A1CEB6E2D00FA5319 /* Assets.xcassets in Resources */,
 				6463E45B1CEB92A9000A2695 /* TGCameraAuthorizationViewController.xib in Resources */,
 				6463E45C1CEB92A9000A2695 /* TGCameraViewController.xib in Resources */,
-				641912BE1CEB8F0B00FA5319 /* Info-tvOS.plist in Resources */,
 				6463E45F1CEB92A9000A2695 /* TGCameraViewController.xcassets in Resources */,
-				641912BF1CEB8F0B00FA5319 /* Info.plist in Resources */,
 				6463E45D1CEB92A9000A2695 /* TGPhotoViewController.xib in Resources */,
 				641912081CEB6E2D00FA5319 /* Main.storyboard in Resources */,
 			);
@@ -556,50 +479,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				6463E4491CEB92A9000A2695 /* TGAlbum.m in Sources */,
-				641912CC1CEB8F0B00FA5319 /* Upload.swift in Sources */,
 				641912B41CEB8F0B00FA5319 /* AnalyzeImage.swift in Sources */,
 				6463E4481CEB92A9000A2695 /* TGPhotoViewController.m in Sources */,
 				641912CE1CEB8F0B00FA5319 /* StringExtension.swift in Sources */,
-				641912C31CEB8F0B00FA5319 /* Notifications.swift in Sources */,
 				6463E44D1CEB92A9000A2695 /* TGCameraFlash.m in Sources */,
-				641912C41CEB8F0B00FA5319 /* ParameterEncoding.swift in Sources */,
 				6463E4581CEB92A9000A2695 /* TGCameraSlideView.m in Sources */,
 				641912B91CEB8F0B00FA5319 /* TagImage.swift in Sources */,
-				641912C51CEB8F0B00FA5319 /* Request.swift in Sources */,
 				6463E4561CEB92A9000A2695 /* TGCameraSlideDownView.m in Sources */,
 				6463E4591CEB92A9000A2695 /* TGTintedButton.m in Sources */,
 				641912051CEB6E2D00FA5319 /* ViewController.swift in Sources */,
-				641912C81CEB8F0B00FA5319 /* Result.swift in Sources */,
-				641912C01CEB8F0B00FA5319 /* Manager.swift in Sources */,
 				6463E4451CEB92A9000A2695 /* TGCameraAuthorizationViewController.m in Sources */,
-				641912BB1CEB8F0B00FA5319 /* Alamofire.swift in Sources */,
-				641912CA1CEB8F0B00FA5319 /* Stream.swift in Sources */,
-				641912C11CEB8F0B00FA5319 /* MultipartFormData.swift in Sources */,
 				6463E44B1CEB92A9000A2695 /* TGCamera.m in Sources */,
 				6463E4511CEB92A9000A2695 /* TGCameraToggle.m in Sources */,
 				6463E4441CEB92A9000A2695 /* UIImage+CameraFilters.m in Sources */,
-				641912BC1CEB8F0B00FA5319 /* Download.swift in Sources */,
 				6463E4531CEB92A9000A2695 /* TGCameraFilterView.m in Sources */,
 				6463E4461CEB92A9000A2695 /* TGCameraNavigationController.m in Sources */,
-				641912CD1CEB8F0B00FA5319 /* Validation.swift in Sources */,
 				641912B71CEB8F0B00FA5319 /* OCR.swift in Sources */,
 				6463E45A1CEB92A9000A2695 /* TGTintedLabel.m in Sources */,
 				6463E4471CEB92A9000A2695 /* TGCameraViewController.m in Sources */,
 				641912B81CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift in Sources */,
-				641912C21CEB8F0B00FA5319 /* NetworkReachabilityManager.swift in Sources */,
 				6463E4501CEB92A9000A2695 /* TGCameraShot.m in Sources */,
 				641912BA1CEB8F0B00FA5319 /* JSONNSDataExtension.swift in Sources */,
-				641912CB1CEB8F0B00FA5319 /* Timeline.swift in Sources */,
 				641912031CEB6E2D00FA5319 /* AppDelegate.swift in Sources */,
 				641912B31CEB8F0B00FA5319 /* CognitiveServices.swift in Sources */,
-				641912C61CEB8F0B00FA5319 /* Response.swift in Sources */,
 				6463E44F1CEB92A9000A2695 /* TGCameraGrid.m in Sources */,
-				641912C71CEB8F0B00FA5319 /* ResponseSerialization.swift in Sources */,
 				6463E4541CEB92A9000A2695 /* TGCameraFocusView.m in Sources */,
 				6463E4571CEB92A9000A2695 /* TGCameraSlideUpView.m in Sources */,
 				641912B51CEB8F0B00FA5319 /* GetThumbnail.swift in Sources */,
-				641912C91CEB8F0B00FA5319 /* ServerTrustPolicy.swift in Sources */,
-				641912BD1CEB8F0B00FA5319 /* Error.swift in Sources */,
 				641912B61CEB8F0B00FA5319 /* ListDomainSpecificModels.swift in Sources */,
 				6463E4551CEB92A9000A2695 /* TGCameraGridView.m in Sources */,
 				6463E44A1CEB92A9000A2695 /* TGAssetsLibrary.m in Sources */,
