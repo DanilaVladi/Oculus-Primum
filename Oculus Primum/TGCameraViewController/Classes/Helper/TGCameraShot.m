@@ -67,6 +67,37 @@
     }];
 }
 
+
++ (void)takePhotoCaptureView:(UIView *)captureView stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput videoOrientation:(AVCaptureVideoOrientation)videoOrientation completion:(void (^)(UIImage *))completion
+{
+    AVCaptureConnection *videoConnection = nil;
+    
+    for (AVCaptureConnection *connection in [stillImageOutput connections]) {
+        for (AVCaptureInputPort *port in [connection inputPorts]) {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo]) {
+                videoConnection = connection;
+                break;
+            }
+        }
+        
+        if (videoConnection) {
+            break;
+        }
+    }
+    
+    [videoConnection setVideoOrientation:videoOrientation];
+    
+    [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
+                                                  completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+                                                      if (imageDataSampleBuffer != NULL) {
+                                                          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+                                                          UIImage *image = [UIImage imageWithData:imageData];
+                                                          completion(image);
+                                                      }
+                                                  }];
+}
+
+
 #pragma mark -
 #pragma mark - Private methods
 

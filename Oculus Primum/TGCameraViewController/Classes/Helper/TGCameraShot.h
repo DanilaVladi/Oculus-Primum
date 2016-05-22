@@ -35,4 +35,10 @@
                     cropSize:(CGSize)cropSize
                   completion:(void (^)(UIImage *photo))completion;
 
++ (void)takePhotoCaptureView:(UIView *)captureView
+            stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput
+            videoOrientation:(AVCaptureVideoOrientation)videoOrientation
+                  completion:(void (^)(UIImage *photo))completion;
+
+
 @end

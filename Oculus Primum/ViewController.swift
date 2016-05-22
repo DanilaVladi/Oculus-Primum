@@ -18,6 +18,12 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     var selectedItem: SelectedItem = .See
     
+    @IBOutlet var tapBar: UITabBar!
+    @IBOutlet var seeBarItem: UITabBarItem!
+    @IBOutlet var readBarItem: UITabBarItem!
+    
+    @IBOutlet weak var previewImageView: UIImageView!
+    
     @IBOutlet var pictureButton: UIButton!
     @IBOutlet var captureView: UIView!
     
@@ -34,6 +40,9 @@ class ViewController: UIViewController, UITabBarDelegate {
         camera.startRunning()
         camera.insertSublayerWithCaptureView(captureView, atRootView: self.view)
         
+        
+        self.tapBar.selectedItem = seeBarItem
+        self.tapBar.delegate = self
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -56,41 +65,47 @@ class ViewController: UIViewController, UITabBarDelegate {
         let waiteAnnouncement = "Analyzing Image, please wait!".speak()
         
         
-        camera.takePhotoWithCaptureView(captureView, videoOrientation: videoOrientation, cropSize: CGSizeMake(captureView.frame.width/*/2*/, captureView.frame.height/*/2*/), completion: { image in
+        camera.takePhotoWithCaptureView(captureView, videoOrientation: videoOrientation, completion: { image in
+            
+            self.previewImageView.hidden = false
+            self.previewImageView.image = image
+            UIView.animateWithDuration(2.0, animations: {
+                self.previewImageView.alpha = 1.0
+            })
+            
             
             
             do {
-                let imageData = UIImagePNGRepresentation(image)
+                
+                let imageData = UIImageJPEGRepresentation(image, 0.7)
                 
                 
                 switch self.selectedItem {
                     
                 case .See:
                     let analyzeImage = cognitiveServices.analyzeImage
-                    let requestObject: AnalyzeImageRequestObject = (imageData!, .Description)
+                    
+                    let visualFeatures: [AnalyzeImage.AnalyzeImageVisualFeatures] = [.Categories, .Description, .Faces, .ImageType, .Color, .Adult]
+                    let requestObject: AnalyzeImageRequestObject = (imageData!, visualFeatures)
                     
                     
                     try analyzeImage.analyzeImageWithRequestObject(requestObject, completion: { (response) in
-                        let description = analyzeImage.extractDescriptionFromDictionary(response!)
+                        let description = response?.generateDescription()
                         
-                        
-                        
-                        var prefix: String {
-                            if description.confidence > 0.8 {
-                                return ""
-                            }
-                            else if description.confidence > 0.5 {
-                                return "I think it's "
-                            }
-                            else {
-                                return "This might be "
-                            }
-                        }
                         
                         waiteAnnouncement.stopSpeakingAtBoundary(.Immediate)
                         
-                        (prefix + description.text).speak()
-                        print(prefix + description.text)
+                        if let description = description {
+                            description.speak()
+                        }
+                        
+                        UIView.animateWithDuration(1, animations: {
+                            self.previewImageView.alpha = 0.0
+                            }, completion: { _ in
+                                self.previewImageView.hidden = true
+                                self.previewImageView.image = nil
+                            })
+                        
                         self.pictureButton.enabled = true
                     })
                     
@@ -128,21 +143,21 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     
 
-//    // MARK: - Tab Bar controller
-//    
-//    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-//        if item == seeBarItem {
-//            pictureButton.setTitle("Describe", forState: .Normal)
-//            pictureButton.setTitle("Describe", forState: .Selected)
-//            selectedItem = .See
-//        }
-//        else if item == readBarItem {
-//            pictureButton.setTitle("  Read  ", forState: .Normal)
-//            pictureButton.setTitle("  Read  ", forState: .Selected)
-//            pictureButton.titleLabel?.text = "  Read  "
-//            selectedItem = .Read
-//        }
-//    }
+    // MARK: - Tab Bar controller
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        if item == seeBarItem {
+            pictureButton.setTitle("Describe", forState: .Normal)
+            pictureButton.setTitle("Describe", forState: .Selected)
+            selectedItem = .See
+        }
+        else if item == readBarItem {
+            pictureButton.setTitle("  Read  ", forState: .Normal)
+            pictureButton.setTitle("  Read  ", forState: .Selected)
+            pictureButton.titleLabel?.text = "  Read  "
+            selectedItem = .Read
+        }
+    }
  
     
     // MARK: - Trait Collection

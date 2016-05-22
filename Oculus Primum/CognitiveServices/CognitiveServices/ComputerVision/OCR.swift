@@ -15,7 +15,7 @@
 //  limitations under the License.
 
 
-import UIKit
+import Foundation
 
 
 /**
@@ -136,7 +136,7 @@ class OCR: NSObject {
     func extractStringsFromDictionary(dictionary: [String : AnyObject]) -> [String] {
         
         // Get Regions from the dictionary
-        let regions = (dictionary["regions"] as! NSArray)[0] as? [String:AnyObject]
+        let regions = (dictionary["regions"] as! NSArray).firstObject as? [String:AnyObject]
         
         // Get lines from the regions dictionary
         let lines = regions!["lines"] as! NSArray

@@ -20,11 +20,30 @@ extension String {
         return first.uppercaseString + String(characters.dropFirst())
     }
     
-    
+
     func speak() -> AVSpeechSynthesizer {
+        
+//        NSError *setCategoryErr = nil;
+//        NSError *activationErr  = nil;
+//        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+//        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setCategory(AVAudioSessionCategoryPlayback)
+        try! audioSession.setActive(true)
+        
         let speechSynthesizer = AVSpeechSynthesizer()
         let speechUtterance = AVSpeechUtterance(string: self)
+        
+        if #available(iOS 9.0, *), let alex = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoiceIdentifierAlex)   {
+            speechUtterance.voice = alex
+        }
+        
+        
         speechSynthesizer.speakUtterance(speechUtterance)
         return speechSynthesizer
+     
+        
     }
+    
 }

@@ -50,6 +50,7 @@
 		6463E45D1CEB92A9000A2695 /* TGPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6463E43F1CEB92A9000A2695 /* TGPhotoViewController.xib */; };
 		6463E45E1CEB92A9000A2695 /* TGCameraViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6463E4421CEB92A9000A2695 /* TGCameraViewController.bundle */; };
 		6463E45F1CEB92A9000A2695 /* TGCameraViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6463E4431CEB92A9000A2695 /* TGCameraViewController.xcassets */; };
+		6474C4A81CF07299007DBCBD /* AnalyzeImageObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474C4A71CF07299007DBCBD /* AnalyzeImageObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		6463E4421CEB92A9000A2695 /* TGCameraViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TGCameraViewController.bundle; sourceTree = "<group>"; };
 		6463E4431CEB92A9000A2695 /* TGCameraViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TGCameraViewController.xcassets; sourceTree = "<group>"; };
 		6474C4701CEE7983007DBCBD /* Oculus Primum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Oculus Primum.entitlements"; sourceTree = "<group>"; };
+		6474C4A71CF07299007DBCBD /* AnalyzeImageObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyzeImageObjectExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				641912B21CEB8F0B00FA5319 /* StringExtension.swift */,
+				6474C4A71CF07299007DBCBD /* AnalyzeImageObjectExtension.swift */,
 			);
 			path = "Swift Extensions";
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6463E4491CEB92A9000A2695 /* TGAlbum.m in Sources */,
+				6474C4A81CF07299007DBCBD /* AnalyzeImageObjectExtension.swift in Sources */,
 				641912B41CEB8F0B00FA5319 /* AnalyzeImage.swift in Sources */,
 				6463E4481CEB92A9000A2695 /* TGPhotoViewController.m in Sources */,
 				641912CE1CEB8F0B00FA5319 /* StringExtension.swift in Sources */,

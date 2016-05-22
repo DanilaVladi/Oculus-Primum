@@ -70,6 +70,13 @@
                         cropSize:(CGSize)cropSize
                       completion:(void (^)(UIImage *))completion;
 
+
+- (void)takePhotoWithCaptureView:(UIView *)captureView
+                videoOrientation:(AVCaptureVideoOrientation)videoOrientation
+                      completion:(void (^)(UIImage *))completion;
+
+
+
 - (void)toogleWithFlashButton:(UIButton *)flashButton;
 
 @end

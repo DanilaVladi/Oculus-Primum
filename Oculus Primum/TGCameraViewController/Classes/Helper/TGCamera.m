@@ -155,6 +155,14 @@ NSMutableDictionary *optionDictionary;
     }];
 }
 
+- (void)takePhotoWithCaptureView:(UIView *)captureView videoOrientation:(AVCaptureVideoOrientation)videoOrientation completion:(void (^)(UIImage *))completion
+{
+    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput videoOrientation:videoOrientation
+                            completion:^(UIImage *photo) {
+                                completion(photo);
+                            }];
+}
+
 - (void)toogleWithFlashButton:(UIButton *)flashButton
 {
     [TGCameraToggle toogleWithCaptureSession:_session];

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y60-CC-oFM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y60-CC-oFM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Oculus Primum-->
@@ -31,23 +32,45 @@
                                     <action selector="readDidPush" destination="BYZ-38-t0r" eventType="touchUpInside" id="GeG-Yf-Djq"/>
                                 </connections>
                             </button>
+                            <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="R8H-4z-DhL">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="See" image="eye" id="4S4-Hc-6L1"/>
+                                    <tabBarItem title="Read" image="book" id="qJA-ZI-zbP"/>
+                                </items>
+                            </tabBar>
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfy-Ul-WfR">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uUc-GQ-EWj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Ew-um-uu6"/>
+                            <constraint firstItem="vfy-Ul-WfR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AkH-7X-8V2"/>
+                            <constraint firstItem="R8H-4z-DhL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="D6w-U6-PUe"/>
                             <constraint firstItem="kMw-Yh-k3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KJy-6s-0MA"/>
                             <constraint firstItem="uUc-GQ-EWj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Nwu-Fu-8Lt"/>
                             <constraint firstItem="kMw-Yh-k3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OK7-7Y-iMU"/>
                             <constraint firstAttribute="trailing" secondItem="kMw-Yh-k3J" secondAttribute="trailing" id="WFd-o4-ZR8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vfy-Ul-WfR" secondAttribute="trailing" constant="-20" id="dQb-Q5-OKR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R8H-4z-DhL" secondAttribute="bottom" id="dTc-ta-C1G"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uUc-GQ-EWj" secondAttribute="bottom" id="fkQ-h3-AeM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kMw-Yh-k3J" secondAttribute="bottom" id="i8w-jz-gKR"/>
                             <constraint firstAttribute="trailing" secondItem="uUc-GQ-EWj" secondAttribute="trailing" id="k06-t3-hMC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R8H-4z-DhL" secondAttribute="trailing" constant="-20" id="s6t-R0-HIk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vfy-Ul-WfR" secondAttribute="bottom" id="snc-xk-4Xz"/>
+                            <constraint firstItem="vfy-Ul-WfR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vBy-j2-urZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Oculus Primum" id="TIy-MQ-LBD"/>
                     <connections>
                         <outlet property="captureView" destination="uUc-GQ-EWj" id="bqj-h6-52E"/>
                         <outlet property="pictureButton" destination="kMw-Yh-k3J" id="RME-pg-f4J"/>
+                        <outlet property="previewImageView" destination="vfy-Ul-WfR" id="1Cf-Xm-6HJ"/>
+                        <outlet property="readBarItem" destination="qJA-ZI-zbP" id="1DZ-la-m9a"/>
+                        <outlet property="seeBarItem" destination="4S4-Hc-6L1" id="XF6-gc-K6O"/>
+                        <outlet property="tapBar" destination="R8H-4z-DhL" id="yVr-aS-MTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,5 +96,9 @@
             <point key="canvasLocation" x="634" y="-202"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="21" height="21"/>
+        <image name="eye" width="42" height="42"/>
+    </resources>
     <color key="tintColor" red="0.59999999999999998" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

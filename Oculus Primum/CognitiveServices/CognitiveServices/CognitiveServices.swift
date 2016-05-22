@@ -16,7 +16,7 @@
 
 
 
-import UIKit
+import Foundation
 
 
 /** WARNING: - Put your own keys in here
