@@ -174,6 +174,11 @@ class AnalyzeImage: NSObject {
             request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
             request.HTTPBody = imageData
         }
+        else if let image = requestObject.resource as? UIImage {
+            request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+            let imageData = UIImageJPEGRepresentation(image, 0.7)
+            request.HTTPBody = imageData
+        }
         else {
             throw AnalyzeImageErros.InvalidImageFormat
         }

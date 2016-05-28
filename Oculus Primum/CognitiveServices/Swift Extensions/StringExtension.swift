@@ -22,11 +22,6 @@ extension String {
     
 
     func speak() -> AVSpeechSynthesizer {
-        
-//        NSError *setCategoryErr = nil;
-//        NSError *activationErr  = nil;
-//        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
-//        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
 
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setCategory(AVAudioSessionCategoryPlayback)
@@ -42,7 +37,6 @@ extension String {
         
         speechSynthesizer.speakUtterance(speechUtterance)
         return speechSynthesizer
-     
         
     }
     

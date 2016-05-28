@@ -19,7 +19,6 @@
 		641912B61CEB8F0B00FA5319 /* ListDomainSpecificModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912961CEB8F0B00FA5319 /* ListDomainSpecificModels.swift */; };
 		641912B71CEB8F0B00FA5319 /* OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912971CEB8F0B00FA5319 /* OCR.swift */; };
 		641912B81CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912981CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift */; };
-		641912B91CEB8F0B00FA5319 /* TagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912991CEB8F0B00FA5319 /* TagImage.swift */; };
 		641912BA1CEB8F0B00FA5319 /* JSONNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419129A1CEB8F0B00FA5319 /* JSONNSDataExtension.swift */; };
 		641912CE1CEB8F0B00FA5319 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912B21CEB8F0B00FA5319 /* StringExtension.swift */; };
 		6463E4441CEB92A9000A2695 /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463E4081CEB92A9000A2695 /* UIImage+CameraFilters.m */; };
@@ -81,7 +80,6 @@
 		641912961CEB8F0B00FA5319 /* ListDomainSpecificModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDomainSpecificModels.swift; sourceTree = "<group>"; };
 		641912971CEB8F0B00FA5319 /* OCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
 		641912981CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeDomainSpecificContent.swift; sourceTree = "<group>"; };
-		641912991CEB8F0B00FA5319 /* TagImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagImage.swift; sourceTree = "<group>"; };
 		6419129A1CEB8F0B00FA5319 /* JSONNSDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONNSDataExtension.swift; sourceTree = "<group>"; };
 		641912B21CEB8F0B00FA5319 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6463E4071CEB92A9000A2695 /* UIImage+CameraFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CameraFilters.h"; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				641912961CEB8F0B00FA5319 /* ListDomainSpecificModels.swift */,
 				641912971CEB8F0B00FA5319 /* OCR.swift */,
 				641912981CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift */,
-				641912991CEB8F0B00FA5319 /* TagImage.swift */,
 			);
 			path = ComputerVision;
 			sourceTree = "<group>";
@@ -488,7 +485,6 @@
 				641912CE1CEB8F0B00FA5319 /* StringExtension.swift in Sources */,
 				6463E44D1CEB92A9000A2695 /* TGCameraFlash.m in Sources */,
 				6463E4581CEB92A9000A2695 /* TGCameraSlideView.m in Sources */,
-				641912B91CEB8F0B00FA5319 /* TagImage.swift in Sources */,
 				6463E4561CEB92A9000A2695 /* TGCameraSlideDownView.m in Sources */,
 				6463E4591CEB92A9000A2695 /* TGTintedButton.m in Sources */,
 				641912051CEB6E2D00FA5319 /* ViewController.swift in Sources */,
@@ -672,6 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Oculus Primum/Oculus Primum.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "Oculus Primum/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -688,6 +685,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Oculus Primum/Oculus Primum.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "Oculus Primum/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

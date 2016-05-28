@@ -117,7 +117,7 @@ extension AnalyzeImage.AnalyzeImageObject {
             }
             
             
-            let age = "\(prefabs.article)\(nextPlaceholderWord)\(person.person) is \(person.a)\(faceObject.age!) years old\(prefabs.gender)"
+            let age = "\(prefabs.article)\(nextPlaceholderWord)\(person.person) is \(person.a)approximatly \(faceObject.age!) years old\(prefabs.gender)"
             descriptions.append(age)
             
             counter += 1
