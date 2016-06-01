@@ -17,15 +17,26 @@ extension AnalyzeImage.AnalyzeImageObject {
         
         // Color description
         
+        
         let dominantColorsBGandFGSame = self.dominantBackgroundColor == self.dominantForegroundColor
         
         var colorsSentance: String {
-            if dominantColorsBGandFGSame {
-                return "The dominating color in the image is \(dominantBackgroundColor!)."
+            
+            if let bgColor = self.dominantBackgroundColor,
+                let fgColor = self.dominantForegroundColor {
+                
+                if dominantColorsBGandFGSame {
+                    return "The dominating color in the image is \(dominantBackgroundColor!)."
+                }
+                else {
+                    return "In the foreground the color \(fgColor) is dominating. In the background it's \(bgColor)."
+                }
+                
             }
             else {
-                return "In the foreground the color \(dominantForegroundColor!) is dominating. In the background it's \(dominantBackgroundColor!)."
+                return "Something went wrong!"
             }
+            
         }
         
         
@@ -84,27 +95,31 @@ extension AnalyzeImage.AnalyzeImageObject {
             }
             
             
-            typealias PrefabObject = (article: String, gender: String)
+            typealias PrefabObject = (heOrShe: String, gender: String, possesive: String)
             var prefabs: PrefabObject {
-                if useHeOrShe {
-                    
-                    var pronoun: PrefabObject {
-                        if faceObject.gender == "Male" {
-                            return ("He", "")
-                        }
-                        else if faceObject.gender == "Female"{
-                            return ("She", "")
-                        }
-                        else {
-                            return ("UNKNOWN", "")
-                        }
+                
+                
+                var pronoun: PrefabObject {
+                    if faceObject.gender == "Male" {
+                        return ("He", "", "his")
                     }
+                    else if faceObject.gender == "Female"{
+                        return ("She", "", "her")
+                    }
+                    else {
+                        return ("UNKNOWN", "", "its")
+                    }
+                }
+                
+                
+                
+                if useHeOrShe {
                     
                     
                     return pronoun
                 }
                 else {
-                    return ("The", " \(faceObject.gender!)")
+                    return ("The", " \(faceObject.gender!)", pronoun.possesive)
                 }
             }
             
@@ -117,7 +132,7 @@ extension AnalyzeImage.AnalyzeImageObject {
             }
             
             
-            let age = "\(prefabs.article)\(nextPlaceholderWord)\(person.person) is \(person.a)approximatly \(faceObject.age!) years old\(prefabs.gender)"
+            let age = "\(prefabs.heOrShe)\(nextPlaceholderWord)\(person.person) is \(person.a)approximately \(faceObject.age!) years old\(prefabs.gender). I think that \(prefabs.possesive) primary emotion is \(faceObject.emotion!)"
             descriptions.append(age)
             
             counter += 1

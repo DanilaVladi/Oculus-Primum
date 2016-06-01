@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UITabBarDelegate {
+class ViewController: UIViewController, UITabBarDelegate, AnalyzeImageDelegate {
 
     enum SelectedItem {
         case See
@@ -26,6 +26,8 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     @IBOutlet var pictureButton: UIButton!
     @IBOutlet var captureView: UIView!
+    
+    @IBOutlet weak var requestProgressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,9 @@ class ViewController: UIViewController, UITabBarDelegate {
     // MARK: - Buttons
     
     @IBAction func readDidPush() {
+        
+        requestProgressView.setProgress(0.0, animated: false)
+        
         let cognitiveServices = CognitiveServices.sharedInstance
         
         
@@ -88,25 +93,14 @@ class ViewController: UIViewController, UITabBarDelegate {
                     let visualFeatures: [AnalyzeImage.AnalyzeImageVisualFeatures] = [.Categories, .Description, .Faces, .ImageType, .Color, .Adult]
                     let requestObject: AnalyzeImageRequestObject = (imageData!, visualFeatures)
                     
+                    analyzeImage.delegate = self
                     
                     try analyzeImage.analyzeImageWithRequestObject(requestObject, completion: { (response) in
-                        let description = response?.generateDescription()
                         
                         
+                        self.requestProgressView.setProgress(0.5, animated: true)
                         waiteAnnouncement.stopSpeakingAtBoundary(.Immediate)
-                        
-                        if let description = description {
-                            description.speak()
-                        }
-                        
-                        UIView.animateWithDuration(1, animations: {
-                            self.previewImageView.alpha = 0.0
-                            }, completion: { _ in
-                                self.previewImageView.hidden = true
-                                self.previewImageView.image = nil
-                            })
-                        
-                        self.pictureButton.enabled = true
+
                     })
                     
                     
@@ -121,7 +115,6 @@ class ViewController: UIViewController, UITabBarDelegate {
                         waiteAnnouncement.stopSpeakingAtBoundary(.Immediate)
                         
                         text.speak()
-                        print(text)
                         self.pictureButton.enabled = true
 
                     })
@@ -139,6 +132,37 @@ class ViewController: UIViewController, UITabBarDelegate {
         })
         
         
+    }
+    
+    
+    // MARK: - Analyze API
+    
+    func finnishedGeneratingObject(analyzeImageObject: AnalyzeImage.AnalyzeImageObject) {
+        
+        dispatch_async(dispatch_get_main_queue()) { 
+            
+            self.requestProgressView.setProgress(1.0, animated: true)
+            
+            let description = analyzeImageObject.generateDescription()
+            
+            
+            if let description = description {
+                description.speak()
+            }
+            
+            
+            UIView.animateWithDuration(1, animations: {
+                self.previewImageView.alpha = 0.0
+                }, completion: { _ in
+                    self.previewImageView.hidden = true
+                    self.previewImageView.image = nil
+            })
+            
+            self.pictureButton.enabled = true
+            
+        }
+        
+    
     }
     
     

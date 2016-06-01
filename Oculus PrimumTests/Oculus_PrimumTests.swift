@@ -11,26 +11,50 @@ import XCTest
 
 class Oculus_PrimumTests: XCTestCase {
     
+    let responseObject = AnalyzeImage.AnalyzeImageObject()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+   
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    
+    // Description tests
+    
+    
+    func testDescriptionGenerationWithOnePerson() {
+        responseObject.descriptionText = "A man smmiling to the camera"
+        
+        responseObject.dominantForegroundColor = "Red"
+        responseObject.dominantBackgroundColor = "Green"
+     
+        let face1 = AnalyzeImage.AnalyzeImageObject.createTestFace()
+        responseObject.faces = [face1]
+        
+        let description = responseObject.generateDescription()
+        
+        XCTAssertEqual("This might be A man smmiling to the camera. He is approximately \(face1.age!) years old. I think that his primary emotion is \(face1.emotion!). In the foreground the color Red is dominating. In the background it\'s Green.", description!)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDescriptionGenerationWithTwoPersons() {
+        responseObject.descriptionText = "a group of people smiling to the camera"
+        
+        responseObject.dominantForegroundColor = "Red"
+        responseObject.dominantBackgroundColor = "Green"
+        
+        let face1 = AnalyzeImage.AnalyzeImageObject.createTestFace()
+        let face2 = AnalyzeImage.AnalyzeImageObject.createTestFace()
+
+        responseObject.faces = [face1, face2]
+        
+        let description = responseObject.generateDescription()!
+        
+        let hardCodedDescription = "This might be a group of people smiling to the camera. There are 2 persons in the image. Starting from the left to the right, The person is a approximately \(face1.age!) years old Male. I think that his primary emotion is \(face1.emotion!).The next person is a approximately \(face2.age!) years old Male. I think that his primary emotion is \(face2.emotion!). In the foreground the color Red is dominating. In the background it\'s Green."
+        
+        
+        XCTAssertEqual(hardCodedDescription, description)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }

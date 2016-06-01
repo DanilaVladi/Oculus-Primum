@@ -50,6 +50,15 @@
 		6463E45E1CEB92A9000A2695 /* TGCameraViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6463E4421CEB92A9000A2695 /* TGCameraViewController.bundle */; };
 		6463E45F1CEB92A9000A2695 /* TGCameraViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6463E4431CEB92A9000A2695 /* TGCameraViewController.xcassets */; };
 		6474C4A81CF07299007DBCBD /* AnalyzeImageObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474C4A71CF07299007DBCBD /* AnalyzeImageObjectExtension.swift */; };
+		649BB0A41CFA30100024C02D /* CognitiveServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912921CEB8F0B00FA5319 /* CognitiveServices.swift */; };
+		649BB0A51CFA30120024C02D /* AnalyzeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912941CEB8F0B00FA5319 /* AnalyzeImage.swift */; };
+		649BB0A61CFA30160024C02D /* GetThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912951CEB8F0B00FA5319 /* GetThumbnail.swift */; };
+		649BB0A71CFA30160024C02D /* ListDomainSpecificModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912961CEB8F0B00FA5319 /* ListDomainSpecificModels.swift */; };
+		649BB0A81CFA30160024C02D /* OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912971CEB8F0B00FA5319 /* OCR.swift */; };
+		649BB0A91CFA30160024C02D /* RecognizeDomainSpecificContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912981CEB8F0B00FA5319 /* RecognizeDomainSpecificContent.swift */; };
+		649BB0AA1CFA301B0024C02D /* JSONNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419129A1CEB8F0B00FA5319 /* JSONNSDataExtension.swift */; };
+		649BB0AB1CFA301E0024C02D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641912B21CEB8F0B00FA5319 /* StringExtension.swift */; };
+		649BB0AC1CFA301E0024C02D /* AnalyzeImageObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474C4A71CF07299007DBCBD /* AnalyzeImageObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -519,7 +528,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649BB0A81CFA30160024C02D /* OCR.swift in Sources */,
+				649BB0AC1CFA301E0024C02D /* AnalyzeImageObjectExtension.swift in Sources */,
+				649BB0A51CFA30120024C02D /* AnalyzeImage.swift in Sources */,
+				649BB0A91CFA30160024C02D /* RecognizeDomainSpecificContent.swift in Sources */,
+				649BB0A61CFA30160024C02D /* GetThumbnail.swift in Sources */,
+				649BB0A41CFA30100024C02D /* CognitiveServices.swift in Sources */,
+				649BB0AB1CFA301E0024C02D /* StringExtension.swift in Sources */,
 				641912181CEB6E2D00FA5319 /* Oculus_PrimumTests.swift in Sources */,
+				649BB0AA1CFA301B0024C02D /* JSONNSDataExtension.swift in Sources */,
+				649BB0A71CFA30160024C02D /* ListDomainSpecificModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,14 +686,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Oculus Primum/Oculus Primum.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "Oculus Primum/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vladidanila.Oculus-Primum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oculus Primum/Oculus_Primum-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -685,21 +705,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Oculus Primum/Oculus Primum.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "Oculus Primum/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vladidanila.Oculus-Primum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oculus Primum/Oculus_Primum-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		641912201CEB6E2D00FA5319 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Oculus PrimumTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vladidanila.Oculus-PrimumTests";
@@ -711,7 +732,6 @@
 		641912211CEB6E2D00FA5319 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Oculus PrimumTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vladidanila.Oculus-PrimumTests";

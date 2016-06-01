@@ -43,12 +43,17 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfy-Ul-WfR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mB1-Qd-oby">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uUc-GQ-EWj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Ew-um-uu6"/>
+                            <constraint firstItem="mB1-Qd-oby" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1oi-zr-v4x"/>
                             <constraint firstItem="vfy-Ul-WfR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AkH-7X-8V2"/>
                             <constraint firstItem="R8H-4z-DhL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="D6w-U6-PUe"/>
+                            <constraint firstItem="mB1-Qd-oby" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hvb-C1-dfJ"/>
                             <constraint firstItem="kMw-Yh-k3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KJy-6s-0MA"/>
                             <constraint firstItem="uUc-GQ-EWj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Nwu-Fu-8Lt"/>
                             <constraint firstItem="kMw-Yh-k3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OK7-7Y-iMU"/>
@@ -58,6 +63,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uUc-GQ-EWj" secondAttribute="bottom" id="fkQ-h3-AeM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kMw-Yh-k3J" secondAttribute="bottom" id="i8w-jz-gKR"/>
                             <constraint firstAttribute="trailing" secondItem="uUc-GQ-EWj" secondAttribute="trailing" id="k06-t3-hMC"/>
+                            <constraint firstAttribute="trailing" secondItem="mB1-Qd-oby" secondAttribute="trailing" id="l5X-bA-EjB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R8H-4z-DhL" secondAttribute="trailing" constant="-20" id="s6t-R0-HIk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vfy-Ul-WfR" secondAttribute="bottom" id="snc-xk-4Xz"/>
                             <constraint firstItem="vfy-Ul-WfR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vBy-j2-urZ"/>
@@ -69,6 +75,7 @@
                         <outlet property="pictureButton" destination="kMw-Yh-k3J" id="RME-pg-f4J"/>
                         <outlet property="previewImageView" destination="vfy-Ul-WfR" id="1Cf-Xm-6HJ"/>
                         <outlet property="readBarItem" destination="qJA-ZI-zbP" id="1DZ-la-m9a"/>
+                        <outlet property="requestProgressView" destination="mB1-Qd-oby" id="t9r-4d-vdb"/>
                         <outlet property="seeBarItem" destination="4S4-Hc-6L1" id="XF6-gc-K6O"/>
                         <outlet property="tapBar" destination="R8H-4z-DhL" id="yVr-aS-MTa"/>
                     </connections>

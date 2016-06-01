@@ -26,7 +26,7 @@ enum CognitiveServicesApiKeys: String {
     
     // Vision
     case ComputerVision = "029cc539dba248d88b09e3200b0176b8"
-    case Emotion = "Emotion Key"
+    case Emotion = "00fc83e464964f4391e4b2b0cb8a10cb"
     case Face = "Face Key"
     case Video = "Video Key"
     
