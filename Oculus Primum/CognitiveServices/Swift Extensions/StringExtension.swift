@@ -33,7 +33,10 @@ extension String {
         if #available(iOS 9.0, *), let alex = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoiceIdentifierAlex)   {
             speechUtterance.voice = alex
         }
-        
+        else {
+            let defaultVoice = AVSpeechSynthesisVoice(language: "en")
+            speechUtterance.voice = defaultVoice
+        }
         
         speechSynthesizer.speakUtterance(speechUtterance)
         return speechSynthesizer
