@@ -183,13 +183,7 @@ class ViewController: UIViewController, UITabBarDelegate, AnalyzeImageDelegate {
         }
     }
  
-    
-    // MARK: - Trait Collection
-    
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-    }
 
-    
     // MARK: - Camera
     
     func videoOrientationForDeviceOrientation(deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
